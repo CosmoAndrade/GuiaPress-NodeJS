@@ -30,7 +30,7 @@
                     <th>
                         <button class="btn btn-warning ">Editar</button>
 
-                        <form method="POST" action="/categories/delete" style="display: inline;">
+        <form method="POST" action="/categories/delete" style="display: inline;" onsubmit="confirmarDelecao(event,this)">
                             <input type="hidden" name="id" value=" <%= category.id  %>  ">
                             <button class="btn btn-danger ">Deletar</button>
                         </form>
@@ -43,3 +43,13 @@
 
     </table>
 </div>
+
+<script>
+    function confirmarDelecao(event,form){
+        event.preventDefault()
+       var decision = confirm('Você quer deletar essa categoria?')
+       if(decision){
+            form.submit()
+       }
+    }
+</script>
