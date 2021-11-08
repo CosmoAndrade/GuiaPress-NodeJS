@@ -19,6 +19,12 @@
                 <textarea class="form-control mt-2" name="body"  cols="30" rows="5" placeholder="Escreva seu artigo aqui!">
 
                 </textarea>
+                <label  class="mt-2 m-2">Categorias</label>
+                <select name="category"  class="form-control">
+                   <% categories.forEach((category) => { %>
+                    <option  value="<%= category.id %> "> <%= category.title %>  </option>
+                   <% }) %>
+                </select>
                 <button class="btn btn-success mt-2">Cadastrar</button>
             </form>
         </div>
